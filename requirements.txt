@@ -1,6 +1,9 @@
 numpy>=1.23.0,<2.0.0  # temporary patch for compat errors https://github.com/ultralytics/yolov5/actions/runs/9538130424/job/26286956354
 matplotlib>=3.3.0
-opencv-python-headless==4.5.3.56
+streamlit==1.37.0
+ultralytics==8.0.0
+opencv-python-headless==4.6.0.66
+
 pillow>=7.1.2
 pyyaml>=5.3.1
 requests>=2.23.0
@@ -13,6 +16,3 @@ py-cpuinfo  # display CPU info
 pandas>=1.1.4
 seaborn>=0.11.0  # plotting
 ultralytics-thop>=2.0.0  # FLOPs computation https://github.com/ultralytics/thop
-ultralytics
-streamlit
-PyOpenGL
