@@ -11,13 +11,5 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
-# Copy the rest of the application code into the container
-COPY . .
-
-# Expose the port that the app runs on
-EXPOSE 8501
-
-# Define the command to run the application
-CMD ["streamlit", "run", "app.py"]
