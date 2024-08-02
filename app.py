@@ -33,30 +33,30 @@ def yolo_inference():
     cap.release()
     cv2.destroyAllWindows()
 
-# Retrieve and display the network host address
-def get_network_host():
-    try:
-        hostname = socket.gethostname()
-        local_ip = socket.gethostbyname(hostname)
-        # Use a UDP socket to connect to an external IP address to get the network IP
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.settimeout(0)
-        try:
-            # Connect to a public DNS server (Google's DNS server)
-            s.connect(('8.8.8.8', 1))
-            network_ip = s.getsockname()[0]
-        except Exception:
-            network_ip = local_ip
-        finally:
-            s.close()
-    except Exception as e:
-        network_ip = 'Unable to retrieve network IP'
-        st.error(f"Error retrieving network IP: {e}")
-    return local_ip, network_ip
+# # Retrieve and display the network host address
+# def get_network_host():
+#     try:
+#         hostname = socket.gethostname()
+#         local_ip = socket.gethostbyname(hostname)
+#         # Use a UDP socket to connect to an external IP address to get the network IP
+#         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#         s.settimeout(0)
+#         try:
+#             # Connect to a public DNS server (Google's DNS server)
+#             s.connect(('8.8.8.8', 1))
+#             network_ip = s.getsockname()[0]
+#         except Exception:
+#             network_ip = local_ip
+#         finally:
+#             s.close()
+#     except Exception as e:
+#         network_ip = 'Unable to retrieve network IP'
+#         st.error(f"Error retrieving network IP: {e}")
+#     return local_ip, network_ip
 
-local_ip, network_ip = get_network_host()
-st.write(f"Local URL: http://{local_ip}:8501")
-st.write(f"Network URL: http://{network_ip}:8501")
+# local_ip, network_ip = get_network_host()
+# st.write(f"Local URL: http://{local_ip}:8501")
+# st.write(f"Network URL: http://{network_ip}:8501")
 
 # Run inference when button is clicked
 if st.button("Start Object Detection"):
